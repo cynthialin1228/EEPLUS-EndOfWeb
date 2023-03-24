@@ -43,8 +43,10 @@ const Register = () => {
   const [toLogin, setToLogin] = useState(false)
 
   // data to backend
-  const [registerForm, setRegisterForm] = useState(RegisterFormTemplate)
-
+  const [registerForm, setRegisterForm] = useState({
+    ...RegisterFormTemplate,
+    showPwd: false,
+  })
   const expand = (e) => {
     e.preventDefault()
     setIsExpand(true)
@@ -132,6 +134,19 @@ const Register = () => {
     }
   }
 
+  const handleShowPwd = (e) => {
+    setRegisterForm({ ...registerForm, showPwd: !registerForm.showPwd })
+    const inputPwd = document.querySelector('input[name="password"]')
+    const inputConfirmPwd = document.querySelector('input[name="ConfirmPassword"]')
+    if (inputPwd.type === 'password') {
+      inputPwd.type = 'text'
+      inputConfirmPwd.type = 'text'
+    } else {
+      inputPwd.type = 'password'
+      inputConfirmPwd.type = 'password'
+    }
+  }
+
   return toLogin ? (
     <Redirect to="/login" />
   ) : (
@@ -202,6 +217,9 @@ const Register = () => {
                         name="ConfirmPassword"
                         onChange={handleInputChange}
                       />
+                      <CButton onClick={handleShowPwd}>
+                        {registerForm.showPwd ? 'Hide' : 'Show'}
+                      </CButton>
                     </CInputGroup>
                     {identity === 'alumni' && (
                       <>

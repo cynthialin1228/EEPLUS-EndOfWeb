@@ -27,9 +27,11 @@ const LoginFormTemplate = {
 const Login = () => {
   const dispatch = useDispatch()
   const { isLogin } = useSelector(selectLogin)
-  const [loginForm, setLoginForm] = useState(LoginFormTemplate)
   const [needRegister, setNeedRegister] = useState(false)
-
+  const [loginForm, setLoginForm] = useState({
+    ...LoginFormTemplate,
+    showPwd: false,
+  })
   const handleInputChange = (e) => {
     setLoginForm({ ...loginForm, [e.target.name]: e.target.value })
   }
@@ -57,6 +59,16 @@ const Login = () => {
             break
         }
       })
+  }
+
+  const handleShowPwd = (e) => {
+    setLoginForm({ ...loginForm, showPwd: !loginForm.showPwd })
+    const inputPwd = document.querySelector('input[name="password"]')
+    if (inputPwd.type === 'password') {
+      inputPwd.type = 'text'
+    } else {
+      inputPwd.type = 'password'
+    }
   }
 
   const handleFBSubmit = (res) => {
@@ -127,6 +139,9 @@ const Login = () => {
                           name="password"
                           onChange={handleInputChange}
                         />
+                        <CButton onClick={handleShowPwd}>
+                          {loginForm.showPwd ? 'Hide' : 'Show'}
+                        </CButton>
                       </CInputGroup>
                       <CRow>
                         <CCol xs="6">

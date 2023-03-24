@@ -26,8 +26,11 @@ const ResetPassword = () => {
   const [toLogin, setToLogin] = useState(false)
 
   const { account, active } = useParams()
-  const [resetPasswordForm, setResetPasswordForm] = useState(ResetPasswordFormTemplate)
-
+  // const [resetPasswordForm, setResetPasswordForm] = useState(ResetPasswordFormTemplate)
+  const [resetPasswordForm, setResetPasswordForm] = useState({
+    ...ResetPasswordFormTemplate,
+    showPwd: false,
+  })
   useEffect(() => {
     setResetPasswordForm({ ...resetPasswordForm, account: account, active: active })
   }, [])
@@ -64,6 +67,19 @@ const ResetPassword = () => {
     }
   }
 
+  const handleShowPwd = (e) => {
+    setResetPasswordForm({ ...resetPasswordForm, showPwd: !resetPasswordForm.showPwd })
+    const inputPwd = document.querySelector('input[name="password"]')
+    const inputConfirmPwd = document.querySelector('input[name="ConfirmPassword"]')
+    if (inputPwd.type === 'password') {
+      inputPwd.type = 'text'
+      inputConfirmPwd.type = 'text'
+    } else {
+      inputPwd.type = 'password'
+      inputConfirmPwd.type = 'password'
+    }
+  }
+
   return toLogin ? (
     <Redirect to="/login" />
   ) : (
@@ -96,6 +112,9 @@ const ResetPassword = () => {
                       name="ConfirmPassword"
                       onChange={handleInputChange}
                     />
+                    <CButton onClick={handleShowPwd}>
+                      {resetPasswordForm.showPwd ? 'Hide' : 'Show'}
+                    </CButton>
                   </CInputGroup>
                   <CRow className="justify-content-center mt-3">
                     <div className="d-flex justify-content-center">
