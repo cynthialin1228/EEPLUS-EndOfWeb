@@ -219,7 +219,7 @@ const Register = () => {
                         name="ConfirmPassword"
                         onChange={handleInputChange}
                       />
-                      <CButton onClick={handleShowPwd}>
+                      <CButton color="transparent" onClick={handleShowPwd}>
                         {registerForm.showPwd ? <Visibility /> : <VisibilityOff />}
                       </CButton>
                     </CInputGroup>

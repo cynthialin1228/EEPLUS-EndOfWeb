@@ -114,7 +114,7 @@ const ResetPassword = () => {
                       name="ConfirmPassword"
                       onChange={handleInputChange}
                     />
-                    <CButton onClick={handleShowPwd}>
+                    <CButton color="transparent" onClick={handleShowPwd}>
                       {resetPasswordForm.showPwd ? <Visibility /> : <VisibilityOff />}
                     </CButton>
                   </CInputGroup>

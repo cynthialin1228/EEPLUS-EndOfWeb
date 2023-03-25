@@ -141,7 +141,7 @@ const Login = () => {
                           name="password"
                           onChange={handleInputChange}
                         />
-                        <CButton onClick={handleShowPwd}>
+                        <CButton color="transparent" onClick={handleShowPwd}>
                           {loginForm.showPwd ? <Visibility /> : <VisibilityOff />}
                         </CButton>
                       </CInputGroup>
