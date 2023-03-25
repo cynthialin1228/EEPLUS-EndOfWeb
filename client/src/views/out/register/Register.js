@@ -23,6 +23,8 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { Redirect, useParams } from 'react-router-dom'
+import Visibility from '@material-ui/icons/Visibility'
+import VisibilityOff from '@material-ui/icons/VisibilityOff'
 
 const Register = () => {
   const { identity } = useParams()
@@ -218,7 +220,7 @@ const Register = () => {
                         onChange={handleInputChange}
                       />
                       <CButton onClick={handleShowPwd}>
-                        {registerForm.showPwd ? 'Hide' : 'Show'}
+                        {registerForm.showPwd ? <Visibility /> : <VisibilityOff />}
                       </CButton>
                     </CInputGroup>
                     {identity === 'alumni' && (

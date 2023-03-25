@@ -14,6 +14,8 @@ import {
   CRow,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
+import Visibility from '@material-ui/icons/Visibility'
+import VisibilityOff from '@material-ui/icons/VisibilityOff'
 
 const ResetPasswordFormTemplate = {
   account: '',
@@ -113,7 +115,7 @@ const ResetPassword = () => {
                       onChange={handleInputChange}
                     />
                     <CButton onClick={handleShowPwd}>
-                      {resetPasswordForm.showPwd ? 'Hide' : 'Show'}
+                      {resetPasswordForm.showPwd ? <Visibility /> : <VisibilityOff />}
                     </CButton>
                   </CInputGroup>
                   <CRow className="justify-content-center mt-3">
