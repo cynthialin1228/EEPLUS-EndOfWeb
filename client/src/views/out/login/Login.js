@@ -18,6 +18,8 @@ import {
   CRow,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
+import Visibility from '@material-ui/icons/Visibility'
+import VisibilityOff from '@material-ui/icons/VisibilityOff'
 
 const LoginFormTemplate = {
   account: '',
@@ -140,7 +142,7 @@ const Login = () => {
                           onChange={handleInputChange}
                         />
                         <CButton onClick={handleShowPwd}>
-                          {loginForm.showPwd ? 'Hide' : 'Show'}
+                          {loginForm.showPwd ? <Visibility /> : <VisibilityOff />}
                         </CButton>
                       </CInputGroup>
                       <CRow>
