@@ -77,9 +77,7 @@ const CareerPreview = ({ post, experience, requirement, resumeURL }) => {
               {post.description && (
                 <>
                   <h4 style={{ fontWeight: '600', margin: '1.3rem 0 0.1rem' }}>說明：</h4>
-                  <h5 style={{ whiteSpace: 'pre-line' }}>
-                    {parser(urlsToLinks(post.description))}
-                  </h5>
+                  <h5 style={{ whiteSpace: 'pre' }}>{parser(urlsToLinks(post.description))}</h5>
                 </>
               )}
               <button onClick={() => setIsExpand(false)}>Show less...</button>

@@ -129,7 +129,7 @@ const CareerBlock = ({ post, isAuth }) => {
                 {post.spec.description && (
                   <>
                     <h4 style={{ fontWeight: '600', margin: '1rem 0 0.1rem' }}>說明：</h4>
-                    <h5 style={{ whiteSpace: 'pre-line' }}>
+                    <h5 style={{ whiteSpace: 'pre' }}>
                       {parser(urlsToLinks(post.spec.description))}
                     </h5>
                   </>
