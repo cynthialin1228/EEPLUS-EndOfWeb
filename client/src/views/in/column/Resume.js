@@ -6,7 +6,7 @@ const Resume = ({ data }) => {
       return (
         <div key={bigsection.subtitle}>
           <h3>{bigsection.subtitle}</h3>
-          <p>&emsp;&emsp;&thinsp;&thinsp;{bigsection.subsection}</p>
+          <p style={{ whiteSpace: 'pre' }}>{bigsection.subsection}</p>
         </div>
       )
     })

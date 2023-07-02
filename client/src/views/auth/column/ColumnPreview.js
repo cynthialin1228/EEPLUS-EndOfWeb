@@ -92,8 +92,8 @@ const ColumnPreview = ({ post, annotation, title, body, anno, exp, edu, intro })
                 {subtitle(body.bigtitle)}
                 {body.bigsections.map((bigsection, sectionIdx) => (
                   <div key={sectionIdx}>
-                    {section(bigsection.subtitle)}
-                    {content(bigsection.subsection)}
+                    <h3>{bigsection.subtitle}</h3>
+                    <p style={{ whiteSpace: 'pre' }}>{bigsection.subsection}</p>
                   </div>
                 ))}
               </div>
