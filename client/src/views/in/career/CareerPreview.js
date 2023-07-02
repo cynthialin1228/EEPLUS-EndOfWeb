@@ -2,9 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { CButton } from '@coreui/react'
 import { eesa } from './index'
-import parser from 'html-react-parser'
-import { urlsToLinks } from './index'
-
+import FormattedText from '../../components/FormattedText'
 const CareerPreview = ({ post, experience, requirement, resumeURL }) => {
   const [isExpand, setIsExpand] = useState(false)
   const [previewURL, setPreviewURL] = useState(post.file)
@@ -77,7 +75,7 @@ const CareerPreview = ({ post, experience, requirement, resumeURL }) => {
               {post.description && (
                 <>
                   <h4 style={{ fontWeight: '600', margin: '1.3rem 0 0.1rem' }}>說明：</h4>
-                  <h5 style={{ whiteSpace: 'pre' }}>{parser(urlsToLinks(post.description))}</h5>
+                  <FormattedText text={post.description} />
                 </>
               )}
               <button onClick={() => setIsExpand(false)}>Show less...</button>

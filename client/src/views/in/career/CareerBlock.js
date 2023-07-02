@@ -5,8 +5,7 @@ import { CButton, CAvatar } from '@coreui/react'
 import { eesa } from './index'
 import CIcon from '@coreui/icons-react'
 import axios from 'axios'
-import parser from 'html-react-parser'
-import { urlsToLinks } from './index'
+import FormattedText from '../../components/FormattedText'
 
 const CareerBlock = ({ post, isAuth }) => {
   const location = useLocation()
@@ -129,9 +128,7 @@ const CareerBlock = ({ post, isAuth }) => {
                 {post.spec.description && (
                   <>
                     <h4 style={{ fontWeight: '600', margin: '1rem 0 0.1rem' }}>說明：</h4>
-                    <h5 style={{ whiteSpace: 'pre' }}>
-                      {parser(urlsToLinks(post.spec.description))}
-                    </h5>
+                    <FormattedText text={post.spec.description} />
                   </>
                 )}
                 <button onClick={() => setIsExpand(false)}>Show less...</button>
