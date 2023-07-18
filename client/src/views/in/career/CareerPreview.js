@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { CButton } from '@coreui/react'
-import { eesa } from './index'
-import FormattedText from '../../components/FormattedText'
+import { eesa, FormattedText } from './index'
 const CareerPreview = ({ post, experience, requirement, resumeURL }) => {
   const [isExpand, setIsExpand] = useState(false)
   const [previewURL, setPreviewURL] = useState(post.file)

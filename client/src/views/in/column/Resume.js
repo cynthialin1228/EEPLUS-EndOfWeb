@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import FormattedText from '../../components/FormattedText'
+import { FormattedText } from './index'
 const Resume = ({ data }) => {
   const getSubSections = (bigsection) => {
     const subSections = bigsection.bigsections.map((bigsection) => {

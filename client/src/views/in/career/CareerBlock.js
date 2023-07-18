@@ -2,10 +2,9 @@ import React, { useState } from 'react'
 import { Link, useLocation, useHistory } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { CButton, CAvatar } from '@coreui/react'
-import { eesa } from './index'
+import { eesa, FormattedText } from './index'
 import CIcon from '@coreui/icons-react'
 import axios from 'axios'
-import FormattedText from '../../components/FormattedText'
 
 const CareerBlock = ({ post, isAuth }) => {
   const location = useLocation()
