@@ -15,6 +15,7 @@ import {
   CListGroupItem,
   CAvatar,
 } from '@coreui/react'
+import Select from 'react-select'
 import CIcon from '@coreui/icons-react'
 import { Link, useHistory } from 'react-router-dom'
 import ProfileImageEditor from './ProfileImageEditor'
@@ -76,6 +77,12 @@ const ProfileEdit = () => {
   useEffect(() => {
     getProfile()
   }, [])
+  const options = [
+    { value: 'chocolate', label: '張時中' },
+    { value: 'strawberry', label: '張子璿' },
+    { value: 'vanilla', label: '張耀文' },
+    { value: 'cherry', label: '陳政維' },
+  ]
   return data ? (
     <>
       <ProfileImageEditor />
@@ -198,13 +205,12 @@ const ProfileEdit = () => {
                   <CCol sm="3">
                     <h6 className="mb-0">Advising Professor</h6>
                   </CCol>
-                  <CCol sm="9" className="text-secondary my-2">
-                    <CFormControl
-                      style={inputStyle}
-                      value={data.advisingProfessor}
-                      onChange={(e) => setData({ ...data, advisingProfessor: e.target.value })}
-                    />
-                  </CCol>
+                  <Select
+                    options={options}
+                    isMulti
+                    value={data.advisingProfessor}
+                    // onChange={(e) => setData({ ...data, advisingProfessor: e.target.value })}
+                  />
                 </div>
                 <hr className="mt-1 mb-3" />
                 <div>
