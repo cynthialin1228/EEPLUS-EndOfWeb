@@ -196,6 +196,19 @@ const ProfileEdit = () => {
                 <hr className="mt-1 mb-3" />
                 <div>
                   <CCol sm="3">
+                    <h6 className="mb-0">Advising Professor</h6>
+                  </CCol>
+                  <CCol sm="9" className="text-secondary my-2">
+                    <CFormControl
+                      style={inputStyle}
+                      value={data.advisingProfessor}
+                      onChange={(e) => setData({ ...data, advisingProfessor: e.target.value })}
+                    />
+                  </CCol>
+                </div>
+                <hr className="mt-1 mb-3" />
+                <div>
+                  <CCol sm="3">
                     <h6 className="mb-0">Student ID</h6>
                   </CCol>
                   <CCol sm="9" className="text-secondary my-2">

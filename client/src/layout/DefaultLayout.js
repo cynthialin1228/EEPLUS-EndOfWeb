@@ -22,6 +22,7 @@ const DefaultLayout = () => {
         <CModalBody>
           為了資安的考量，請您先至<a href="/change_password">此網址</a>更改密碼。
         </CModalBody>
+        <CModalBody>現在可以在Profile新增指導教授了！</CModalBody>
         <CModalFooter>
           <CButton
             color="warning"

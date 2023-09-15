@@ -47,6 +47,7 @@ const updateProfile = async (req, res, next) => {
   const query = ({
     username,
     nickname,
+    advisingProfessor,
     profile,
     publicEmail,
     cellphone,
@@ -84,6 +85,7 @@ const rules = [
       'account',
       'username',
       'nickname',
+      'advisingProfessor',
       'profile',
       'publicEmail',
       'cellphone',
