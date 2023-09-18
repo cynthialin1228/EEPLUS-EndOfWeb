@@ -120,15 +120,6 @@ const Profile = () => {
               <hr className="mt-1 mb-3" />
               <CRow>
                 <CCol sm="3" className="px-4">
-                  <h6 className="mb-0 ">Advising Professor</h6>
-                </CCol>
-                <CCol sm="9" className="text-secondary">
-                  {data.advisingProfessor}
-                </CCol>
-              </CRow>
-              <hr className="mt-1 mb-3" />
-              <CRow>
-                <CCol sm="3" className="px-4">
                   <h6 className="mb-0">Student ID</h6>
                 </CCol>
                 <CCol sm="9" className="text-secondary">
@@ -151,6 +142,16 @@ const Profile = () => {
                 </CCol>
                 <CCol sm="9" className="text-secondary">
                   {data.cellphone}
+                </CCol>
+              </CRow>
+              <hr className="mt-1 mb-3" />
+              <CRow>
+                <CCol sm="3" className="px-4">
+                  <h6 className="mb-0 ">Advising Professor</h6>
+                </CCol>
+                <CCol sm="9" className="text-secondary">
+                  {/* {data.advisingProfessor.label} */}
+                  {data.advisingProfessor}
                 </CCol>
               </CRow>
               <hr className="mt-1 mb-3" />
