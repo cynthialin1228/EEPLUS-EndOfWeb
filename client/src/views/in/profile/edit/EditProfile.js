@@ -45,8 +45,10 @@ const ProfileEdit = () => {
       })
   }
   const handleSave = () => {
+    const newData = data
+    newData.advisingProfessor = JSON.stringify(data.advisingProfessor)
     axios
-      .patch('api/profile', data)
+      .patch('api/profile', newData)
       .then((res) => {
         alert(`completed`)
         history.push(`/profile/${studentID}`)
@@ -244,7 +246,10 @@ const ProfileEdit = () => {
                     options={options}
                     isMulti
                     value={data.advisingProfessor}
-                    // onChange={(e) => setData({ ...data, advisingProfessor: e.target.value })}
+                    onChange={(item) => {
+                      console.log(item)
+                      setData({ ...data, advisingProfessor: item })
+                    }}
                   />
                 </div>
                 <hr className="mt-1 mb-3" />
