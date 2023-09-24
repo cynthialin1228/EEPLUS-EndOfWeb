@@ -79,14 +79,6 @@ const ProfileEdit = () => {
   useEffect(() => {
     getProfile()
   }, [])
-
-  // const options = [
-  // { value: '張時中', label: '張時中' },
-  // { value: '張子璿', label: '張子璿' },
-  // { value: '張耀文', label: '張耀文' },
-  // { value: '陳政維', label: '陳政維' },
-
-  // ]
   const chineseNames = [
     '張時中',
     '張子璿',
@@ -292,7 +284,6 @@ const ProfileEdit = () => {
     value: name,
     label: name,
   }))
-  // const allOptions = options.concat(formattedNames);
 
   return data ? (
     <>
