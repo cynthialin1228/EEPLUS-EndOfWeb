@@ -63,7 +63,7 @@ const updateProfile = async (req, res, next) => {
     doctor,
     Occupation,
   } = req.body)
-  query.advisingProfessor = JSON.parse(query.advisingProfessor).map((item) => item.label)
+  query.advisingProfessor = JSON.parse(query.advisingProfessor)
   query['userimage'] = parseFile(req.file)
   const toSet = updateQuery(query)
   console.log('toSet', toSet)

@@ -6,7 +6,7 @@ const Profile_Schema = new Schema({
   account: { type: String, required: true, lowercase: true },
   username: { type: String, required: true },
   nickname: String,
-  advisingProfessor: [String],
+  advisingProfessor: [{ label: String, value: String }],
   profile: String,
   major: String,
   double_major: String,

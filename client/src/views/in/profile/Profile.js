@@ -150,7 +150,13 @@ const Profile = () => {
                   <h6 className="mb-0 ">Advising Professor</h6>
                 </CCol>
                 <CCol sm="9" className="text-secondary">
-                  {data.advisingProfessor.join('，')}
+                  {data.advisingProfessor.map((item, index) => {
+                    return index === data.advisingProfessor.length - 1 ? (
+                      <span key={index}>{item.value}</span>
+                    ) : (
+                      <span key={index}>{item.value}，</span>
+                    )
+                  })}
                 </CCol>
               </CRow>
               <hr className="mt-1 mb-3" />
