@@ -12,8 +12,13 @@ const DefaultLayout = () => {
   const [isModal, setIsModal] = useState(false)
   const { studentID } = useSelector(selectLogin)
   useEffect(() => {
-    setIsModal(!noModal.includes(pathname) && isLogin && isModal)
+    setIsModal(!noModal.includes(pathname) && isLogin)
   }, [isLogin])
+  useEffect(() => {
+    if (pathname == 'profile' && isLogin) {
+      setIsModal(false)
+    }
+  }, [pathname])
   return (
     <>
       <CModal size="l" visible={isModal} onDismiss={() => setIsModal(false)} alignment="center">
@@ -21,8 +26,8 @@ const DefaultLayout = () => {
           <CModalTitle>請大家去新增專題教授</CModalTitle>
         </CModalHeader>
         <CModalBody>
-          EE+推出新功能，讓大家可以在上面登錄自己跟過的專題教授啦~
-          請點擊「立即填寫」新增您跟過的專題教授吧！
+          EE+推出新功能，讓大家可以在上面登錄自己跟過的專題教授啦~ 請點擊{' '}
+          <a href={`/profile/${studentID}`}>此連結 </a> 新增您跟過的專題教授吧！
         </CModalBody>
         <CModalFooter>
           <CButton
