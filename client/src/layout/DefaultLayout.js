@@ -10,19 +10,20 @@ const DefaultLayout = () => {
   const { isLogin } = useSelector(selectLogin)
   const noModal = ['forget', 'register_entry', 'reset_password', 'change_password']
   const [isModal, setIsModal] = useState(false)
+  const { studentID } = useSelector(selectLogin)
   useEffect(() => {
-    setIsModal(!noModal.includes(pathname) && isLogin)
+    setIsModal(!noModal.includes(pathname) && isLogin && isModal)
   }, [isLogin])
   return (
     <>
-      {/* <CModal size="l" visible={isModal} onDismiss={() => setIsModal(false)} alignment="center">
+      <CModal size="l" visible={isModal} onDismiss={() => setIsModal(false)} alignment="center">
         <CModalHeader onDismiss={() => setIsModal(false)}>
-          <CModalTitle>注意！</CModalTitle>
+          <CModalTitle>請大家去新增專題教授</CModalTitle>
         </CModalHeader>
         <CModalBody>
-          為了資安的考量，請您先至<a href="/change_password">此網址</a>更改密碼。
+          EE+推出新功能，讓大家可以在上面登錄自己跟過的專題教授啦~
+          請點擊「立即填寫」新增您跟過的專題教授吧！
         </CModalBody>
-        <CModalBody>現在可以在Profile新增指導教授了！</CModalBody>
         <CModalFooter>
           <CButton
             color="warning"
@@ -30,18 +31,19 @@ const DefaultLayout = () => {
               setIsModal(false)
             }}
           >
-            我更改過密碼了！
+            已經填寫
           </CButton>
           <CButton
+            href={`/profile/${studentID}`}
             color="primary"
             onClick={() => {
               setIsModal(false)
             }}
           >
-            我是新註冊的帳號！
+            立即填寫
           </CButton>
         </CModalFooter>
-      </CModal> */}
+      </CModal>
       <div>
         <AppSidebar />
         <div className="wrapper d-flex flex-column min-vh-100">
