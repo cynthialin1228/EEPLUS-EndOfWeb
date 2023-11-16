@@ -21,7 +21,7 @@ const DefaultLayout = () => {
   }, [pathname])
   return (
     <>
-      {/* <CModal size="l" visible={isModal} onDismiss={() => setIsModal(false)} alignment="center">
+     <CModal size="l" visible={isModal} onDismiss={() => setIsModal(false)} alignment="center">
         <CModalHeader onDismiss={() => setIsModal(false)}>
           <CModalTitle>請大家去新增專題教授</CModalTitle>
         </CModalHeader>
@@ -48,7 +48,7 @@ const DefaultLayout = () => {
             立即填寫
           </CButton>
         </CModalFooter>
-      </CModal> */}
+      </CModal>
       <div>
         <AppSidebar />
         <div className="wrapper d-flex flex-column min-vh-100">
