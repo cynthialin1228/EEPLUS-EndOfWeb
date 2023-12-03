@@ -18,7 +18,6 @@ const DefaultLayout = () => {
     'change_password',
   ]
   const [isModal, setIsModal] = useState(false)
-  const { studentID } = useSelector(selectLogin)
   useEffect(() => {
     if (isLogin) {
       axios
