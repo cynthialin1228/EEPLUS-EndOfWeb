@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { selectLogin } from '../slices/loginSlice'
 import { AppContent, AppSidebar, AppFooter, AppHeader } from '../components/index'
@@ -47,8 +47,10 @@ const DefaultLayout = () => {
           請點擊下方按鈕新增您跟過的專題教授吧！
         </CModalBody>
         <CModalFooter>
-          <CButton href={`/edit_profile`} color="primary">
-            立即填寫
+          <CButton onClick={() => setIsModal(false)}>
+            <Link to={`/edit_profile`} style={{ color: 'white' }}>
+              立即填寫
+            </Link>
           </CButton>
         </CModalFooter>
       </CModal>
